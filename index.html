@@ -88,9 +88,8 @@ function PinGate({children}) {
   );
 }
 
-function App(){const[tab,setTab]=useState("pricing");const[state,dispatch]=useReducer(reducer,{products:initialProducts,overheads:initialOverheads,monthlyUnits:500});return(<div className="min-h-screen bg-[#F2D5C4] py-1 px-2 sm:px-4"><div className="max-w-lg mx-auto"><div className="text-center mb-1">
-          <h1 className="text-base sm:text-lg font-bold text-[#5C3A21]" style={{fontFamily:"Georgia,serif"}}>BELLISSIMO</h1>
-          <p className="text-[#8B5E3C] text-xs tracking-widest uppercase">Gourmet Baking</p></div><TabBar tab={tab} setTab={setTab}/>{tab==="pricing"&&<PricingTab products={state.products} overheads={state.overheads} monthlyUnits={state.monthlyUnits}/>}{tab==="products"&&<ProductsTab products={state.products} dispatch={dispatch}/>}{tab==="overheads"&&<OverheadsTab overheads={state.overheads} monthlyUnits={state.monthlyUnits} dispatch={dispatch}/>}</div></div>);}
+function App(){const[tab,setTab]=useState("pricing");const[state,dispatch]=useReducer(reducer,{products:initialProducts,overheads:initialOverheads,monthlyUnits:500});return(<div className="min-h-screen bg-[#F2D5C4] py-1 px-2 sm:px-4"><div className="max-w-lg mx-auto"><div className="text-center mb-1 flex items-center justify-center gap-2">
+          <img src={LOGO_URL} alt="" className="w-9 h-9 rounded-full border border-[#8B5E3C] bg-white p-0.5"/><div><h1 className="text-sm font-bold text-[#5C3A21] leading-tight" style={{fontFamily:"Georgia,serif"}}>BELLISSIMO</h1><p className="text-[#8B5E3C] text-[9px] tracking-widest uppercase leading-tight">Gourmet Baking</p><p className="text-[#C4A898] text-[8px] leading-tight">Cost & Price Manager</p></div></div><TabBar tab={tab} setTab={setTab}/>{tab==="pricing"&&<PricingTab products={state.products} overheads={state.overheads} monthlyUnits={state.monthlyUnits}/>}{tab==="products"&&<ProductsTab products={state.products} dispatch={dispatch}/>}{tab==="overheads"&&<OverheadsTab overheads={state.overheads} monthlyUnits={state.monthlyUnits} dispatch={dispatch}/>}</div></div>);}
 const root=ReactDOM.createRoot(document.getElementById('root'));root.render(React.createElement(PinGate, null, React.createElement(App)));
 </script>
 </body>
