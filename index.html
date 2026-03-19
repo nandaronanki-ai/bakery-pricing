@@ -59,7 +59,7 @@ function PinGate({children}) {
   const [pin, setPin] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState(false);
-  const CORRECT_PIN = 'bellissimo2024';
+  const CORRECT_PIN = 'gourmet2026';
   
   if (unlocked) return children;
   
@@ -70,17 +70,17 @@ function PinGate({children}) {
   
   return (
     <div className="min-h-screen bg-[#F2D5C4] flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm text-center border border-[#DEB8A0]">
-        <img src={LOGO_URL} alt="Bellissimo" className="w-24 h-24 mx-auto mb-3 rounded-full border-2 border-[#8B5E3C] bg-white p-1.5 shadow-lg"/>
-        <h1 className="text-2xl font-bold text-[#5C3A21] mb-1" style={{fontFamily:'Georgia,serif'}}>BELLISSIMO</h1>
-        <p className="text-[#8B5E3C] text-xs tracking-widest uppercase mb-6">Gourmet Baking</p>
+      <div className="bg-white rounded-2xl shadow-xl p-5 w-full max-w-xs text-center border border-[#DEB8A0]">
+        <img src={LOGO_URL} alt="Bellissimo" className="w-16 h-16 mx-auto mb-2 rounded-full border-2 border-[#8B5E3C] bg-white p-1 shadow-lg"/>
+        <h1 className="text-xl font-bold text-[#5C3A21] mb-0.5" style={{fontFamily:'Georgia,serif'}}>BELLISSIMO</h1>
+        <p className="text-[#8B5E3C] text-xs tracking-widest uppercase mb-4">Gourmet Baking</p>
         <input type="password" value={pin} onChange={e=>{setPin(e.target.value);setError(false)}}
           onKeyDown={e=>{if(e.key==='Enter')check()}}
           placeholder="Enter password"
-          className="w-full px-4 py-3 rounded-lg border border-[#DEB8A0] text-center text-lg focus:outline-none focus:ring-2 focus:ring-[#8B5E3C] mb-3"/>
+          className="w-full px-3 py-2.5 rounded-lg border border-[#DEB8A0] text-center text-base focus:outline-none focus:ring-2 focus:ring-[#8B5E3C] mb-2"/>
         {error && <p className="text-red-500 text-sm mb-2">Incorrect password</p>}
         <button onClick={check}
-          className="w-full py-3 rounded-lg bg-[#8B5E3C] text-white font-bold text-sm hover:bg-[#6B4930] transition-colors">
+          className="w-full py-2.5 rounded-lg bg-[#8B5E3C] text-white font-bold text-sm hover:bg-[#6B4930] transition-colors">
           Enter
         </button>
       </div>
